@@ -12,7 +12,8 @@ public class Console : MonoBehaviour
 
     public static DebugCommand HOST;
     public static DebugCommand CLIENT;
-    
+    public static DebugCommand DISCONNECT;
+        
     public static DebugCommand<string>JOIN;
 
 
@@ -54,12 +55,18 @@ public class Console : MonoBehaviour
             
         });
         
+        DISCONNECT = new DebugCommand("disconnect","disconnects from the game","disconnect",()=>
+        {
+            NetworkManager.Singleton.Shutdown();
+        });
+        
         
         commandList = new List<object>
         {
             HOST,
             CLIENT,
-            JOIN
+            JOIN,
+            DISCONNECT
         };
     }
 
