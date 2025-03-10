@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Unity.Netcode;
+using Unity.Netcode.Transports.UTP;
 
 public class Console : MonoBehaviour
 {
@@ -10,7 +11,9 @@ public class Console : MonoBehaviour
     string input = "";
 
     public static DebugCommand HOST;
-    public static DebugCommand JOIN;
+    public static DebugCommand CLIENT;
+    
+    public static DebugCommand<string>JOIN;
 
 
     public List<object> commandList;
@@ -25,23 +28,37 @@ public class Console : MonoBehaviour
 
             Debug.Log("Starting as Host...");
             NetworkManager.Singleton.StartHost();
+            Debug.Log("server started");
         });
 
         
-        JOIN = new DebugCommand("join", "joins a server", "join", () =>
+        CLIENT = new DebugCommand("client", "joins a server", "client", () =>
         {
             if (NetworkManager.Singleton.IsServer || NetworkManager.Singleton.IsClient)
                 return;
 
-            Debug.Log("Starting as Client...");
+            Debug.Log("Starting as Client on localhost ...");
+            NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData("127.0.0.1",7777);
             NetworkManager.Singleton.StartClient();
+            Debug.Log("client started");
         });
 
+        JOIN= new DebugCommand<string>("join","joins a server with the provided ip","join <ip_address>",(x)=>
+        {
+            if (NetworkManager.Singleton.IsServer || NetworkManager.Singleton.IsClient)
+                return;
+            Debug.Log($"Joining server with ip {x} ....");
+            NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData(x,7777);
+            NetworkManager.Singleton.StartClient();
+            Debug.Log("client started");
+            
+        });
         
         
         commandList = new List<object>
         {
             HOST,
+            CLIENT,
             JOIN
         };
     }
@@ -98,7 +115,7 @@ public class Console : MonoBehaviour
 
     private void HandleInput()
     {
-        
+        string[] properties = input.Split(" ");
         for (int i = 0; i < commandList.Count; i++)
         {
             DebugCommandBase commandBase = commandList[i] as DebugCommandBase;
@@ -108,6 +125,11 @@ public class Console : MonoBehaviour
                 if (command != null)
                 {
                     command.Invoke();
+                }
+                else if (commandList[i] as DebugCommand<string>!=null)
+                {
+                Debug.Log(properties[1]);
+                    (commandList[i] as DebugCommand<string>).Invoke(properties[1]);
                 }
             }
         }
