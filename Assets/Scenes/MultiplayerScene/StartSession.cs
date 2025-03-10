@@ -13,7 +13,6 @@ public class StartSession : MonoBehaviour
         else if(MainPlay.IsHost==2)
         {
             Debug.Log("Starting as Clieeeeent...");
-            Debug.Log(MainPlay.IsHost);
             NetworkManager.Singleton.StartClient();
         }
     }

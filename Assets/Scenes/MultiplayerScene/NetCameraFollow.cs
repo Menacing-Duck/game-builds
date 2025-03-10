@@ -18,13 +18,9 @@ public class CameraController : MonoBehaviour
             return;
         }
         
-        
-        
-        // Nouvelle position de la caméra avec offset
+
         Vector3 desiredPosition = new Vector3(playerTransform.position.x + offset.x, playerTransform.position.y + offset.y, transform.position.z);
 
-
-        // Appliquer un effet de lissage
         transform.position = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
         
     }

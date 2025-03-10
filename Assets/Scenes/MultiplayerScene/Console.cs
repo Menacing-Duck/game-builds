@@ -11,7 +11,7 @@ public class Console : MonoBehaviour
 
     public static DebugCommand HOST;
     public static DebugCommand JOIN;
-    public static DebugCommand SET; 
+
 
     public List<object> commandList;
 
@@ -38,96 +38,11 @@ public class Console : MonoBehaviour
         });
 
         
-        SET = new DebugCommand("set", 
-            "Sets a public value. Usage: set <GameObjectName> <ComponentName> <FieldName> <Value>", 
-            "set <GameObjectName> <ComponentName> <FieldName> <Value>", 
-            () =>
-        {
-            
-            string[] tokens = input.Split(' ');
-            if (tokens.Length < 5)
-            {
-                Debug.Log("Usage: set <GameObjectName> <ComponentName> <FieldName> <Value>");
-                return;
-            }
-
-        
-            string goName = tokens[1];
-            string compName = tokens[2];
-            string fieldName = tokens[3];
-            
-            string newValueStr = string.Join(" ", tokens.Skip(4).ToArray());
-
-            
-            GameObject go = GameObject.Find(goName);
-            if (go == null)
-            {
-                Debug.Log($"GameObject '{goName}' not found.");
-                return;
-            }
-
-            
-            var componentType = AppDomain.CurrentDomain.GetAssemblies()
-                                   .SelectMany(assembly => assembly.GetTypes())
-                                   .FirstOrDefault(type => type.Name == compName);
-            if (componentType == null)
-            {
-                Debug.Log($"Component type '{compName}' not found.");
-                return;
-            }
-
-            
-            Component comp = go.GetComponent(componentType);
-            if (comp == null)
-            {
-                Debug.Log($"Component '{compName}' not found on GameObject '{goName}'.");
-                return;
-            }
-
-            
-            var type = comp.GetType();
-            var field = type.GetField(fieldName);
-            if (field != null)
-            {
-                try
-                {
-                    object convertedValue = Convert.ChangeType(newValueStr, field.FieldType);
-                    field.SetValue(comp, convertedValue);
-                    Debug.Log($"Field '{fieldName}' set to '{newValueStr}'.");
-                }
-                catch (Exception e)
-                {
-                    Debug.Log($"Error setting field: {e.Message}");
-                }
-                return;
-            }
-
-            
-            var property = type.GetProperty(fieldName);
-            if (property != null && property.CanWrite)
-            {
-                try
-                {
-                    object convertedValue = Convert.ChangeType(newValueStr, property.PropertyType);
-                    property.SetValue(comp, convertedValue);
-                    Debug.Log($"Property '{fieldName}' set to '{newValueStr}'.");
-                }
-                catch (Exception e)
-                {
-                    Debug.Log($"Error setting property: {e.Message}");
-                }
-                return;
-            }
-
-            Debug.Log($"No public field or writable property named '{fieldName}' found in component '{compName}'.");
-        });
-
         
         commandList = new List<object>
         {
             HOST,
-            JOIN,
-            SET
+            JOIN
         };
     }
 
