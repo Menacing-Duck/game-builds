@@ -17,9 +17,6 @@ public class PlayerMov : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(Input.GetKey(KeyCode.Escape)){
-            SceneManager.LoadSceneAsync(0);
-        }
 
         moveX = 0f;
         moveY = 0f;
