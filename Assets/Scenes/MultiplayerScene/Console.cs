@@ -28,6 +28,7 @@ public class Console : MonoBehaviour
                 return;
 
             Debug.Log("Starting as Host...");
+            NetworkManager.Singleton.GetComponent<UnityTransport>().SetConnectionData("0.0.0.0",7777);
             NetworkManager.Singleton.StartHost();
             Debug.Log("server started");
         });

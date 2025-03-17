@@ -11,7 +11,7 @@ public class CameraController : MonoBehaviour
     private void Start(){
         findPlayer();
     }
-    private void Update()
+    private void FixedUpdate()
     {
         if (playerTransform == null){
             findPlayer();
@@ -21,7 +21,7 @@ public class CameraController : MonoBehaviour
 
         Vector3 desiredPosition = new Vector3(playerTransform.position.x + offset.x, playerTransform.position.y + offset.y, transform.position.z);
 
-        transform.position = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed);
+        transform.position = Vector3.Lerp(transform.position, desiredPosition, smoothSpeed * Time.deltaTime);
         
     }
 
@@ -34,10 +34,11 @@ public class CameraController : MonoBehaviour
             }
         }
     }
-    void FixedUpdate()
+    void LateUpdate()
     {
         if(Input.GetKey(KeyCode.Escape)){
             SceneManager.LoadSceneAsync(0);
+            NetworkManager.Singleton.Shutdown();
         }
     }
 
