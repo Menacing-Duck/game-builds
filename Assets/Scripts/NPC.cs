@@ -35,6 +35,7 @@ void Update()
         {
             ZeroText();
             DialoguePanel.SetActive(true);
+            ContButton.SetActive(false);
             StartCoroutine(Typing());
         }
     }
