@@ -33,6 +33,7 @@ void Update()
         }
         else
         {
+            ZeroText();
             DialoguePanel.SetActive(true);
             StartCoroutine(Typing());
         }
@@ -76,6 +77,7 @@ private void OnTriggerEnter2D(Collider2D other)
 
     if (other.CompareTag("Player"))
     {
+        ZeroText();
         Debug.Log("Player entered the trigger!");
         PlayerIsClose = true;
     }
@@ -89,6 +91,7 @@ private void OnTriggerExit2D(Collider2D other)
     {
         Debug.Log("Player exited the trigger!");
         PlayerIsClose = false;
+        StopAllCoroutines();
         ZeroText();
     }
 }
