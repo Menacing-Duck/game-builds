@@ -1,16 +1,18 @@
 using UnityEditor;
 using UnityEngine;
-using UnityEngine;
 
 public class MainGoblin : MonoBehaviour
 {
     public int health;
+
+    public int maxhealth;
     public int damage;
 
     public GameObject gob;
 
     public MainGoblin(){
         health = 100;
+        maxhealth = 100;
         damage = 10;
     }
 
@@ -31,6 +33,9 @@ public class MainGoblin : MonoBehaviour
 
     public void gobheal(int heal){
         health += heal;
+        if(health > maxhealth){
+            health = maxhealth;
+        }
     }
 
 
