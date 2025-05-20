@@ -23,7 +23,8 @@ MonoBehaviour:
   affectEnemies: 1
   lifetime: 10
   projectilePrefab: {fileID: 6045238060774744094, guid: 732226c1c7b59c9c480021f8355361ae, type: 3}
-  projectileSpeed: 10
+  projectileSpeed: 15
   isHoming: 1
   homingStrength: 2
   homingDelay: 0.5
+  automaticFire: 1

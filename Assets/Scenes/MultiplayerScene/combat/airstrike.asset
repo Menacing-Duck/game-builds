@@ -22,4 +22,6 @@ MonoBehaviour:
   affectAllies: 0
   affectEnemies: 1
   lifetime: 5
-  aoePrefab: {fileID: 0}
+  aoePrefab: {fileID: 6045238060774744094, guid: 665395c5b430da6f798f323ed9a656e5, type: 3}
+  spawnMode: 0
+  offsetFromCaster: 1

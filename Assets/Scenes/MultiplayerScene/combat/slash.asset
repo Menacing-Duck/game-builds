@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74dd690c5b18e5043ac09d19ad45f6d1, type: 3}
   m_Name: slash
   m_EditorClassIdentifier: 
-  spellName: New Spell
-  cooldown: 1
-  manaCost: 10
+  spellName: slahs
+  cooldown: 0.6
+  manaCost: 0
   effect:
-    damage: 0
+    damage: 10
     speedMod: 0
     duration: 0
   affectAllies: 0
   affectEnemies: 1
-  lifetime: 5
-  aoePrefab: {fileID: 0}
-  spawnMode: 0
+  lifetime: 0.5
+  aoePrefab: {fileID: 1287872103840653728, guid: 104864fec0366b0ca8df9fa42009246d, type: 3}
+  spawnMode: 1
   offsetFromCaster: 1
