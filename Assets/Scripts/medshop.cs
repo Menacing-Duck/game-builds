@@ -13,7 +13,7 @@ public class medshop : MonoBehaviour
 
     public GameObject Shop;
 
-    public TextMeshProUGUI xpc, upglvl, bourse, quit;
+    public TextMeshProUGUI xpc, upglvl, bourse, quit, manabourse;
 
     public void Quit(){
         Shop.SetActive(false);
@@ -22,6 +22,10 @@ public class medshop : MonoBehaviour
 
     public void UpdMon(){
         bourse.text = $"Current Money = {Player.Money} coins";
+    }
+
+    public void UpdMana(){
+        manabourse.text = $"Current Mana = {Player.Money} mana";
     }
 
     public void Buy10(){
@@ -33,6 +37,8 @@ public class medshop : MonoBehaviour
                 Player.Mana += 10;
             }
             Player.Money -= 5;
+            UpdMana();
+            UpdMon();
         }
     }
 
@@ -46,6 +52,7 @@ public class medshop : MonoBehaviour
             }
             Player.Money -= 10;
             UpdMon();
+            UpdMana();
         }
     }
 
@@ -59,6 +66,7 @@ public class medshop : MonoBehaviour
             }
             Player.Money -= 35;
             UpdMon();
+            UpdMana();
         }
     }
 
@@ -72,6 +80,7 @@ public class medshop : MonoBehaviour
             }
             Player.Money -= 80;
             UpdMon();
+            UpdMana();
 
         }
     }
