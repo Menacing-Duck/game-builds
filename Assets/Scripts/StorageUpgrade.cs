@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WeaponUpgrade : MonoBehaviour
+public class StorageUpgrade : MonoBehaviour
 {
     public GameObject Player;
     public GameObject Money;
