@@ -34,12 +34,23 @@ public class DebugCommand : DebugCommandBase{
 public class DebugCommand<T1> : DebugCommandBase
 {
     private Action<T1> command;
-    public DebugCommand(string id, string description, string format, Action<T1> command): base(id,description,format)
+    public DebugCommand(string id, string description, string format, Action<T1> command) : base(id, description, format)
     {
-        this.command=command;
+        this.command = command;
     }
     public void Invoke(T1 value)
     {
         command.Invoke(value);
     }
+}
+
+public class DebugCommand<T1, T2> : DebugCommandBase
+{
+    Action<T1, T2> command;
+    public DebugCommand(string id, string desc, string form, Action<T1, T2> command)
+        : base(id, desc, form)
+    {
+        this.command = command;
+    }
+    public void Invoke(T1 v1, T2 v2) => command.Invoke(v1, v2);
 }
