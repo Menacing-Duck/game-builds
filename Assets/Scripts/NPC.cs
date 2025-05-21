@@ -23,21 +23,10 @@ void Update()
 
     if (Input.GetKeyDown(interactKey) && PlayerIsClose)
     {
-
-        if (DialoguePanel.activeInHierarchy)
-        {
-            if (ContButton.activeSelf)
-            {
-                    ZeroText();
-            }
-        }
-        else
-        {
             ZeroText();
             DialoguePanel.SetActive(true);
             ContButton.SetActive(false);
             StartCoroutine(Typing());
-        }
     }
 
     if (DialogueText.text == Dialogue[Index])

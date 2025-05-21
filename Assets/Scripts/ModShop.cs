@@ -15,7 +15,16 @@ public class modshop : MonoBehaviour
 
     public TextMeshProUGUI xpc, upglvl, bourse, manabourse;
 
-    public void Quit(){
+
+    void Update()
+    {
+        UpdMana();
+        UpdMon();
+        
+    }
+
+    public void Quit()
+    {
         Shop.SetActive(false);
     }
 
@@ -25,15 +34,19 @@ public class modshop : MonoBehaviour
     }
 
     public void UpdMana(){
-        manabourse.text = $"Current Ammo = {Player.Money} ammo";
+        manabourse.text = $"Current Ammo = {Player.Mana} ammo";
     }
 
-    public void Buy10(){
-        if(Player.Money >= 5){
-            if(Player.Mana + 10 >= Player.MaxMana){
+    public void Buy10()
+    {
+        if (Player.Money >= 5 && Player.Mana != Player.MaxMana)
+        {
+            if (Player.Mana + 10 >= Player.MaxMana)
+            {
                 Player.Mana = Player.MaxMana;
             }
-            else{
+            else
+            {
                 Player.Mana += 10;
             }
             Player.Money -= 5;
@@ -43,7 +56,7 @@ public class modshop : MonoBehaviour
     }
 
     public void Buy25(){
-        if(Player.Money >= 10){
+        if(Player.Money >= 10 && Player.Mana != Player.MaxMana){
             if(Player.Mana + 25 >= Player.MaxMana){
                 Player.Mana = Player.MaxMana;
             }
@@ -57,7 +70,7 @@ public class modshop : MonoBehaviour
     }
 
     public void Buy100(){
-        if(Player.Money >= 35){
+        if(Player.Money >= 35 && Player.Mana != Player.MaxMana){
             if(Player.Mana + 100 >= Player.MaxMana){
                 Player.Mana = Player.MaxMana;
             }
@@ -71,7 +84,7 @@ public class modshop : MonoBehaviour
     }
 
     public void buy250(){
-        if(Player.Money >= 80){
+        if(Player.Money >= 80 && Player.Mana != Player.MaxMana){
             if(Player.Mana + 250 >= Player.MaxMana){
                 Player.Mana = Player.MaxMana;
             }
@@ -81,22 +94,21 @@ public class modshop : MonoBehaviour
             Player.Money -= 80;
             UpdMon();
             UpdMana();
-
         }
     }
 
     public void upgstor(){
-        if(Player.CurLvl == 1){
-            if(Player.Money >= 5){
-                Player.MaxMana = 50;
-                Player.Money -= 5;
-                Player.CurLvl = 2;
-                xpc.text = "15 Coins";
-                upglvl.text = "2";
+        
+        if(Player.CurLvl == 3){
+            if(Player.Money >= 35){
+                Player.MaxMana = 250;
+                Player.Money -= 35;
+                Player.CurLvl = 3;
+                xpc.text = "Max level reached!";
+                upglvl.text = "4";
                 UpdMon();
             }
         }
-
         if(Player.CurLvl == 2){
             if(Player.Money >= 15){
                 Player.MaxMana = 100;
@@ -108,18 +120,18 @@ public class modshop : MonoBehaviour
             }
         }
 
-        if(Player.CurLvl == 3){
-            if(Player.Money >= 35){
-                Player.MaxMana = 250;
-                Player.Money -= 35;
-                Player.CurLvl = 3;
-                xpc.text = "Max level reached!";
-                upglvl.text = "4";
+        if (Player.CurLvl == 1)
+        {
+            if (Player.Money >= 5)
+            {
+                Player.MaxMana = 50;
+                Player.Money -= 5;
+                Player.CurLvl = 2;
+                xpc.text = "15 Coins";
+                upglvl.text = "2";
                 UpdMon();
             }
         }
-
-    
     }
 
 }
