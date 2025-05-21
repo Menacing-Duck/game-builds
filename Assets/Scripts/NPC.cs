@@ -10,35 +10,42 @@ public class NPC : MonoBehaviour
     public GameObject DialoguePanel;
     public TextMeshProUGUI DialogueText;
     public string[] Dialogue;
-    private int Index;
+    public int Index;
 
     public GameObject ContButton;
 
     public float WordSpeed;
     public bool PlayerIsClose;
 
-void Update()
-{
-    KeyCode interactKey = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("interact", "F"));
-
-    if (Input.GetKeyDown(interactKey) && PlayerIsClose)
+    void Update()
     {
-            ZeroText();
-            DialoguePanel.SetActive(true);
-            ContButton.SetActive(false);
-            StartCoroutine(Typing());
-    }
+        KeyCode interactKey = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("interact", "F"));
 
-    if (DialogueText.text == Dialogue[Index])
-    {
-        ContButton.SetActive(true);
-    }
+        if (Input.GetKeyDown(interactKey) && PlayerIsClose)
+        {
+
+            if (DialoguePanel.activeInHierarchy)
+            {
+                ZeroText();
+            }
+            else
+            {
+                DialoguePanel.SetActive(true);
+                ContButton.SetActive(false);
+                StartCoroutine(Typing());
+            }
+        }
+
+        if (DialogueText.text == Dialogue[Index])
+        {
+            ContButton.SetActive(true);
+        }
+    
+    
 }
 
     public void ZeroText(){
         DialogueText.text = "";
-        Index = 0;
-        DialoguePanel.SetActive(false);
     }
 
     IEnumerator Typing(){
@@ -61,6 +68,8 @@ void Update()
         else
         {
             ZeroText();
+            DialoguePanel.SetActive(false);
+            Index = 0;
         }
     }
 
@@ -80,12 +89,14 @@ private void OnTriggerExit2D(Collider2D other)
 {
     Debug.Log("OnTriggerExit2D called with: " + other.gameObject.name);
 
-    if (other.CompareTag("Player"))
-    {
-        Debug.Log("Player exited the trigger!");
-        PlayerIsClose = false;
-        StopAllCoroutines();
-        ZeroText();
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("Player exited the trigger!");
+            PlayerIsClose = false;
+            StopAllCoroutines();
+            ZeroText();
+            DialoguePanel.SetActive(false);
+            Index = 0;
     }
 }
 

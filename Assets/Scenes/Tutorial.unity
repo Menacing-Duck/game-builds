@@ -328,7 +328,7 @@ MonoBehaviour:
   Hp: 100
   Mana: 10
   MaxMana: 20
-  IsMed: 1
+  IsMed: 0
 --- !u!1 &78364801
 GameObject:
   m_ObjectHideFlags: 0
