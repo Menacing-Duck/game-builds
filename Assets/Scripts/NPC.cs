@@ -26,7 +26,10 @@ void Update()
 
         if (DialoguePanel.activeInHierarchy)
         {
-            ZeroText();
+            if (ContButton.activeSelf)
+            {
+                    ZeroText();
+            }
         }
         else
         {
@@ -59,12 +62,15 @@ void Update()
     public void NextLine(){
         ContButton.SetActive(false);
 
-        if(Index < Dialogue.Length - 1){
+        if (Index < Dialogue.Length - 1)
+        {
             Index++;
             DialogueText.text = "";
+            ZeroText();
             StartCoroutine(Typing());
         }
-        else{
+        else
+        {
             ZeroText();
         }
     }
