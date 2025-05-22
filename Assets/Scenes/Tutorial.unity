@@ -11490,9 +11490,11 @@ MonoBehaviour:
   - This will be your basic training
   - Make sure your controls are set
   - when you are ready, you can follow the path
-  - Earth counts on you!
+  - You will find my twin, he is the shopkeeper
+  - He will teach you the basics of the economy
+  Index: 0
   ContButton: {fileID: 903189207}
-  WordSpeed: 0.1
+  WordSpeed: 0.05
   PlayerIsClose: 0
 --- !u!61 &903994874
 BoxCollider2D:
