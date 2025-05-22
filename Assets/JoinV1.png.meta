@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e292fc63dd2a5367798e892cc079394f
+guid: 46f217cd6680d5115975595c4faf3bdc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7764925838846554678
-    second: Corn_Path_0
+      213: 927370293360956529
+    second: JoinV1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Corn_Path_0
+      name: JoinV1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
+        x: 9
+        y: 6
+        width: 141
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 63273bbf8ee82cb60800000000000000
-      internalID: 7764925838846554678
+      spriteID: 174970f4e5eaedc00800000000000000
+      internalID: 927370293360956529
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Corn_Path_0: 7764925838846554678
+      JoinV1_0: 927370293360956529
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
