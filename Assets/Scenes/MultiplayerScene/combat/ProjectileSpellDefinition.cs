@@ -8,6 +8,5 @@ public class ProjectileSpellDefinition : SpellDefinitionBase
     public bool  isHoming       = false;
     public float homingStrength = 2;
     public float homingDelay    = 0;
-
     public bool  automaticFire  = false;
 }

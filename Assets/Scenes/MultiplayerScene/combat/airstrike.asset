@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: airstrike
   m_EditorClassIdentifier: 
   spellName: airstrike
-  cooldown: 1
+  cooldown: 0.5
   manaCost: 50
   effect:
     damage: 50
@@ -21,7 +21,8 @@ MonoBehaviour:
     duration: 0
   affectAllies: 0
   affectEnemies: 1
-  lifetime: 5
+  lifetime: 1
   aoePrefab: {fileID: 6045238060774744094, guid: 665395c5b430da6f798f323ed9a656e5, type: 3}
   spawnMode: 0
   offsetFromCaster: 1
+  automaticFire: 0

@@ -6,7 +6,7 @@ public class SpellRuntime : NetworkBehaviour
 {
     public SpellDefinitionBase def;
     public ulong casterId;
-    public Team  casterTeam;
+    public Team casterTeam;
 
     Rigidbody2D rb;
     float spawnTime;
@@ -15,10 +15,7 @@ public class SpellRuntime : NetworkBehaviour
     {
         spawnTime = Time.time;
         rb = GetComponent<Rigidbody2D>();
-
-        if (IsServer && def.lifetime > 0)
-            Invoke(nameof(Despawn), def.lifetime);
-
+        if (IsServer && def.lifetime > 0) Invoke(nameof(Despawn), def.lifetime);
         if (def is ProjectileSpellDefinition p && IsServer && rb != null)
             rb.linearVelocity = (Vector2)transform.up * p.projectileSpeed;
     }
@@ -26,22 +23,28 @@ public class SpellRuntime : NetworkBehaviour
     public void IgnoreCaster(Collider2D casterCol)
     {
         var myCol = GetComponent<Collider2D>();
-        if (myCol && casterCol)
-            Physics2D.IgnoreCollision(myCol, casterCol, true);
+        if (myCol && casterCol) Physics2D.IgnoreCollision(myCol, casterCol, true);
+    }
+
+    void Update()
+    {
+        if (def is ProjectileSpellDefinition && rb != null)
+        {
+            Vector2 v = rb.linearVelocity;
+            if (v.sqrMagnitude > 0.001f) transform.up = v.normalized;
+        }
     }
 
     void FixedUpdate()
     {
         if (!IsServer) return;
-        if (def is ProjectileSpellDefinition p)
+        if (def is ProjectileSpellDefinition p && p.isHoming)
         {
-            if (!p.isHoming) return;
             if (Time.time - spawnTime < p.homingDelay) return;
             if (!TryFindTarget(out Vector2 dir)) return;
-
             Vector2 v = rb.linearVelocity;
-            float angle = Vector2.SignedAngle(v, dir);
-            float rot = Mathf.Clamp(angle, -p.homingStrength, p.homingStrength);
+            float ang = Vector2.SignedAngle(v, dir);
+            float rot = Mathf.Clamp(ang, -p.homingStrength, p.homingStrength);
             rb.linearVelocity = Quaternion.Euler(0, 0, rot) * v;
         }
     }
@@ -68,7 +71,7 @@ public class SpellRuntime : NetworkBehaviour
     bool ShouldAffect(Stats target)
     {
         if (target.team == Team.Neutral) return false;
-        if (target.IsAlly(casterTeam))   return def.affectAllies;
+        if (target.IsAlly(casterTeam)) return def.affectAllies;
         return def.affectEnemies;
     }
 
