@@ -1,14 +1,10 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: bc43ab3d93fb8de45a0681f0c85c2ba6
-=======
-guid: 51c8caa0d1fd2465195d3ba221acd685
->>>>>>> movements
+guid: 46f217cd6680d5115975595c4faf3bdc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6377452179529154262
-    second: Complete_path_0
+      213: 927370293360956529
+    second: JoinV1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -41,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -79,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -100,33 +96,17 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-<<<<<<< HEAD
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-=======
->>>>>>> movements
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Complete_path_0
+      name: JoinV1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 16
+        x: 9
+        y: 6
+        width: 141
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -135,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a21cf1b280dbe77a0800000000000000
-      internalID: -6377452179529154262
+      spriteID: 174970f4e5eaedc00800000000000000
+      internalID: 927370293360956529
       vertices: []
       indices: 
       edges: []
@@ -154,17 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-<<<<<<< HEAD
-<<<<<<< HEAD
     nameFileIdTable:
-      Complete_path_0: -6377452179529154262
-=======
-    nameFileIdTable: {}
->>>>>>> movements
-=======
-    nameFileIdTable:
-      Complete_path_0: -6377452179529154262
->>>>>>> movements
+      JoinV1_0: 927370293360956529
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

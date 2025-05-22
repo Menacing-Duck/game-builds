@@ -155,10 +155,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
 <<<<<<< HEAD
+<<<<<<< HEAD
     nameFileIdTable:
       Side_Path_0: -2844410538439995574
 =======
     nameFileIdTable: {}
+>>>>>>> movements
+=======
+    nameFileIdTable:
+      Side_Path_0: -2844410538439995574
 >>>>>>> movements
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

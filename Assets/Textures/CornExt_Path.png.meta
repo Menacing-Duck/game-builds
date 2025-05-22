@@ -155,10 +155,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
 <<<<<<< HEAD
+<<<<<<< HEAD
     nameFileIdTable:
       CornExt_Path_0: -7302007090626755508
 =======
     nameFileIdTable: {}
+>>>>>>> movements
+=======
+    nameFileIdTable:
+      CornExt_Path_0: -7302007090626755508
 >>>>>>> movements
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
