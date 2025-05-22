@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Very_Green_Bush_tileset_0: -8932169020835528550
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

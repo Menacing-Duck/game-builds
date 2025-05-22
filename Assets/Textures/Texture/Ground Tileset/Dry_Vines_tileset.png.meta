@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Dry_Vines_tileset_0: 2970824055364818797
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

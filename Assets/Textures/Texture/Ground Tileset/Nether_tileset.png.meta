@@ -347,7 +347,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Nether_tileset_0: 7058291407470809518
+      Nether_tileset_1: -5925635697675489888
+      Nether_tileset_2: 6120423901099812563
+      Nether_tileset_3: -539973482416522341
+      Nether_tileset_4: 4986028395621363064
+      Nether_tileset_5: -7327784148389589303
+      Nether_tileset_6: 75293840002323238
+      Nether_tileset_7: 2719011460291642863
+      Nether_tileset_8: -819473890228555510
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

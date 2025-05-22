@@ -347,7 +347,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Sand_tileset_0: -1317881165615829033
+      Sand_tileset_1: 8796731175717358509
+      Sand_tileset_2: 4581193306370320447
+      Sand_tileset_3: 2025858773207507228
+      Sand_tileset_4: 2005369976562398896
+      Sand_tileset_5: -2634382994070936180
+      Sand_tileset_6: -3180824498179806748
+      Sand_tileset_7: -213236180728697588
+      Sand_tileset_8: 3513738250791717039
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -322,7 +322,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Dark_Bricks_tileset_0: 637845075321163137
+      Dark_Bricks_tileset_1: 7787570756019475863
+      Dark_Bricks_tileset_2: -2222373272271895300
+      Dark_Bricks_tileset_3: 3825002756329552973
+      Dark_Bricks_tileset_4: 3583430171233184092
+      Dark_Bricks_tileset_5: 1887419270782079690
+      Dark_Bricks_tileset_6: -3215707971834012853
+      Dark_Bricks_tileset_7: 294900537669627852
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

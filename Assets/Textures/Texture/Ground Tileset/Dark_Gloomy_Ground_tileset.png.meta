@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Dark_Gloomy_Ground_tileset_0: 3466599912668725977
+      Dark_Gloomy_Ground_tileset_1: 5321620844101502875
+      Dark_Gloomy_Ground_tileset_2: 2303578233331010064
+      Dark_Gloomy_Ground_tileset_3: 6724717545789919064
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
