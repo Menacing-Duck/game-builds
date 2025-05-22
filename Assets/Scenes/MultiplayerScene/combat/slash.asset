@@ -19,9 +19,14 @@ MonoBehaviour:
     damage: 10
     speedMod: 0
     duration: 0
+    tickInterval: 0
+    cooldownReduction: 0
+    manaRegenBonus: 0
+    manaCostReduction: 0
   affectAllies: 0
   affectEnemies: 1
   lifetime: 0.5
   aoePrefab: {fileID: 1287872103840653728, guid: 104864fec0366b0ca8df9fa42009246d, type: 3}
   spawnMode: 1
   offsetFromCaster: 1
+  stickToCaster: 1

@@ -322,7 +322,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Chocolate_tileset_0: 7947338835856413240
+      Chocolate_tileset_1: -9177535734547564750
+      Chocolate_tileset_2: -2199128819917132761
+      Chocolate_tileset_3: -5578149687075213714
+      Chocolate_tileset_4: 7392016151759606000
+      Chocolate_tileset_5: -3078641567800587398
+      Chocolate_tileset_6: 4982701496156654076
+      Chocolate_tileset_7: -117035215455845248
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

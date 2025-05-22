@@ -42,6 +42,7 @@ public class SpellCaster : NetworkBehaviour
 
 void TryFire(int slot)
 {
+        Debug.Log("tamer");
     var spell = spellbook[slot];
     float cd = spell.cooldown * stats.GetCooldownMultiplier();
     if (Time.time - lastCast[slot] < cd) return;
@@ -59,6 +60,7 @@ void TryFire(int slot)
     [ServerRpc]
     void CastServerRpc(int slot, Vector2 aim,int cost)
     {
+        Debug.Log("envie de crever");
         if (slot >= spellbook.Count) return;
         var spell = spellbook[slot];
         if (stats.mana.Value < cost) return;
