@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: f230173bbe7768a4dbe34f0c161ff760
+=======
+guid: bda16f3c50bc5998396fcd77ef592d6f
+>>>>>>> movements
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -96,6 +100,7 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+<<<<<<< HEAD
   - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
@@ -109,6 +114,8 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+=======
+>>>>>>> movements
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -147,8 +154,12 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
+<<<<<<< HEAD
     nameFileIdTable:
       Side_Path_0: -2844410538439995574
+=======
+    nameFileIdTable: {}
+>>>>>>> movements
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

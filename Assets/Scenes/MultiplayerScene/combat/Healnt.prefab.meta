@@ -1,5 +1,9 @@
 fileFormatVersion: 2
-guid: 732226c1c7b59c9c480021f8355361ae
+<<<<<<<< HEAD:Assets/Scenes/MultiplayerScene/combat/Healnt.prefab.meta
+guid: b1df5d459426d4c6196e5ad5c2c5b7c9
+========
+guid: 4d4579cfb931c21019c89bd8de666caa
+>>>>>>>> movements:Assets/Prefabs/NetPlayer.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 
