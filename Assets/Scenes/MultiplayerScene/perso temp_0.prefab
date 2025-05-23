@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 8288890220956080894}
   - component: {fileID: 452159444029280831}
   - component: {fileID: 6593879756222100067}
+  - component: {fileID: -935046482298128843}
   m_Layer: 0
   m_Name: perso temp_0
   m_TagString: Player
@@ -155,7 +156,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 0
@@ -208,7 +209,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  speed: 10
+  animator: {fileID: 0}
+  inputThreshold: 0.1
 --- !u!114 &5897658364856728968
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -274,10 +276,10 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   spellbook:
   - {fileID: 11400000, guid: 89a36a83974b5868e8c28a7ee307552f, type: 2}
-  - {fileID: 11400000, guid: a65e6e45de718581a9cbf93d3dcf3664, type: 2}
-  - {fileID: 11400000, guid: 53c6dec9a73389b5481772e48c600632, type: 2}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: bc7432ebcac6355ad8476a5d96f7d0a0, type: 2}
+  - {fileID: 11400000, guid: 724a623a77b6c3632880fee87305c6fe, type: 2}
+  - {fileID: 11400000, guid: c761715a9817c910c81c8f524f540dca, type: 2}
+  - {fileID: 11400000, guid: 20b561e5eabd6d9df9fc114abcce91ad, type: 2}
 --- !u!114 &452159444029280831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -293,8 +295,8 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   maxHealth: 100
   maxMana: 100
-  healthRegen: 100
-  manaRegen: 10000
+  healthRegen: 5
+  manaRegen: 15
   health:
     m_InternalValue: 100
   mana:
@@ -317,6 +319,28 @@ MonoBehaviour:
   DebugInfo: {fileID: 2979240216316786724}
   caster: {fileID: 8288890220956080894}
   stats: {fileID: 452159444029280831}
+--- !u!95 &-935046482298128843
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3653237945674502741}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7306721203313224561
 GameObject:
   m_ObjectHideFlags: 0
@@ -351,8 +375,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 4}
-  m_SizeDelta: {x: 6, y: 7}
+  m_AnchoredPosition: {x: 0, y: 3}
+  m_SizeDelta: {x: 6, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &3053741869337718922
 MeshRenderer:
@@ -454,7 +478,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 1024
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0

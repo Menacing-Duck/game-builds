@@ -80,6 +80,7 @@ public class PlayerMovement : NetworkBehaviour
         }
 
         // Pour savoir dans quel sens je vais
+        
         Vector2 input = new Vector2(moveX, moveY);
 
         if (input.magnitude > inputThreshold)
@@ -96,10 +97,9 @@ public class PlayerMovement : NetworkBehaviour
 
         netIsWalking.Value = isWalking;
 
-        
+
         //netAnimDirection.Value = new Vector2(moveX, moveY);
         // --> cette ligne prend la valeur local mais normalement il n'y en a pas besoin avec ce qu'il y a juste au dessus
-
 
         // Le if est conseillé pour eviter que ce ne soit trop sensible, et apparament il y a un truc avec des tremblements ou jsp quoi
         if (input.magnitude > inputThreshold)

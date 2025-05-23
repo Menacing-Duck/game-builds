@@ -19,10 +19,14 @@ MonoBehaviour:
     damage: 5
     speedMod: 0
     duration: 0
+    tickInterval: 0
+    cooldownReduction: 0
+    manaRegenBonus: 0
+    manaCostReduction: 0
   affectAllies: 1
   affectEnemies: 1
   lifetime: 10
-  projectilePrefab: {fileID: 6045238060774744094, guid: 732226c1c7b59c9c480021f8355361ae, type: 3}
+  projectilePrefab: {fileID: 6045238060774744094, guid: b1df5d459426d4c6196e5ad5c2c5b7c9, type: 3}
   projectileSpeed: 15
   isHoming: 1
   homingStrength: 2
