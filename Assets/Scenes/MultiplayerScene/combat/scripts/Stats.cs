@@ -23,29 +23,44 @@ public class Stats : NetworkBehaviour
 
     readonly List<Buff> buffs = new();
 
-    void Update()
+float healthRegenAcc;
+float manaRegenAcc;
+
+void Update()
+{
+    if (!IsServer) return;
+    float dt = Time.deltaTime;
+
+    float totalManaBonus = 0f;
+    for (int i = buffs.Count - 1; i >= 0; i--)
     {
-        if (!IsServer) return;
-        float dt = Time.deltaTime;
-        float effManaRegen = manaRegen;
-        float totalCostRed = 0f;
-        for (int i = buffs.Count - 1; i >= 0; i--)
+        var b = buffs[i];
+        b.remaining -= dt;
+        if (b.remaining <= 0f) buffs.RemoveAt(i);
+        else
         {
-            var b = buffs[i];
-            b.remaining -= dt;
-            if (b.remaining <= 0f) buffs.RemoveAt(i);
-            else
-            {
-                effManaRegen += b.manaBonus;
-                totalCostRed += b.costReduction;
-                buffs[i] = b;
-            }
+            totalManaBonus += b.manaBonus;
+            buffs[i] = b;
         }
-        if (health.Value < maxHealth)
-            health.Value = Mathf.Min(maxHealth, health.Value + Mathf.RoundToInt(healthRegen * dt));
-        if (mana.Value < maxMana)
-            mana.Value   = Mathf.Min(maxMana,   mana.Value   + Mathf.RoundToInt(effManaRegen * dt));
     }
+
+    healthRegenAcc += healthRegen * dt;
+    int hGain = (int)healthRegenAcc;
+    if (hGain > 0)
+    {
+        health.Value = Mathf.Min(maxHealth, health.Value + hGain);
+        healthRegenAcc -= hGain;
+    }
+
+    manaRegenAcc += (manaRegen + totalManaBonus) * dt;
+    int mGain = (int)manaRegenAcc;
+    if (mGain > 0)
+    {
+        mana.Value = Mathf.Min(maxMana, mana.Value + mGain);
+        manaRegenAcc -= mGain;
+    }
+}
+
 
     public void Apply(SpellEffect eff, ulong casterId)
     {

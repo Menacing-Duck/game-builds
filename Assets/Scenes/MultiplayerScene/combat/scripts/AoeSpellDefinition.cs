@@ -9,4 +9,5 @@ public class AoeSpellDefinition : SpellDefinitionBase
     public AoeSpawnMode spawnMode = AoeSpawnMode.AtMouse;
     public float offsetFromCaster = 1;
     public bool stickToCaster = false;
+    public bool automaticFire = false;
 }
