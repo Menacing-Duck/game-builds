@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{60f87dbc-014c-480b-99f6-76a6dcbf2ff3}">
+		<property name="assetPath">
+			<value>SFX/Avion_ricainAEROProp_Avion passage bruite 5 (ID 3008)_LS.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>9.9120000000000008</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{b6bb934a-adcb-4f97-bb35-4db9ca24e154}</destination>
+		</relationship>
+	</object>
+</objects>

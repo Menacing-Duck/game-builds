@@ -536,8 +536,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../../FMOD_RitaudioProject/FMOD_RitaudioProject.fspro
-  sourceBankPath: ../../FMOD_RitaudioProject/Build
+  sourceProjectPath: FMOD_SoundForTheGame/FMOD_SoundForTheGame.fspro
+  sourceBankPath: FMOD_SoundForTheGame/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -558,8 +558,10 @@ MonoBehaviour:
   VirtualChannelSettings: []
   RealChannelSettings: []
   Plugins: []
-  MasterBanks: []
-  Banks: []
+  MasterBanks:
+  - Master
+  Banks:
+  - Music
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
