@@ -297,7 +297,14 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Rocky_Grass_tileset_0: 8300674920783919512
+      Rocky_Grass_tileset_1: -763399096093027526
+      Rocky_Grass_tileset_2: -5931365966296128127
+      Rocky_Grass_tileset_3: -7478642335979325262
+      Rocky_Grass_tileset_4: 5141445432228925230
+      Rocky_Grass_tileset_5: 5935020586217309749
+      Rocky_Grass_tileset_6: 1551568375320085306
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

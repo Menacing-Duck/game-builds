@@ -347,7 +347,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Candy_tileset_0: 4533330176185026965
+      Candy_tileset_1: -138905820054164890
+      Candy_tileset_2: 4239759757983157767
+      Candy_tileset_3: 4198354129969824345
+      Candy_tileset_4: -7337806143304718867
+      Candy_tileset_5: 3088490878675848549
+      Candy_tileset_6: -7321362699548738245
+      Candy_tileset_7: -9079056475762116835
+      Candy_tileset_8: -1472539321799391854
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

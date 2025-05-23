@@ -322,7 +322,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Dirty_Water_tileset_0: 2149752443517675866
+      Dirty_Water_tileset_1: -6878110063629396157
+      Dirty_Water_tileset_2: -6750964099441242556
+      Dirty_Water_tileset_3: 4045011356437519184
+      Dirty_Water_tileset_4: 5213567138610688810
+      Dirty_Water_tileset_5: 9002788933752099053
+      Dirty_Water_tileset_6: 2871494680788533875
+      Dirty_Water_tileset_7: -2356277960489533017
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

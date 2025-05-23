@@ -222,7 +222,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Ghostly_grass_tileset_0: 3403615611215889745
+      Ghostly_grass_tileset_1: -3753335065924229436
+      Ghostly_grass_tileset_2: -6356958764447630862
+      Ghostly_grass_tileset_3: -8789112424867005231
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
