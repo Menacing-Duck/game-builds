@@ -1,67 +1,78 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using Unity.Netcode;
-using Unity.Netcode.Transports.UTP;
 using System.Net;
 using System.Text;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
-public class CharacterSelectUI : MonoBehaviour
+public class selectUi : MonoBehaviour
 {
-    int isHost;
-    
-    public CharacterSpawnManager spawnMgr;
+    public int isHost;
     public TMP_Text codeText;
     public TMP_InputField codeInput;
-    public TMP_Dropdown charDropdown;
+    public Button[] characterButtons;
     public Button launchButton;
+    public static string dcodedCode;
+
+    public static int selection = 0;
 
     const string chars36 = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     void Start()
     {
         isHost = MainPlay.IsHost;
-        if (isHost==1)
+
+        for (int i = 0; i < characterButtons.Length; i++)
         {
+            int index = i;
+            characterButtons[i].onClick.AddListener(() =>
+            {
+                selection = index;
+                Debug.Log($"[SelectUI] Chosen character: {selection}");
+            });
+        }
+
+        Debug.Log($"[SelectUI] Am I host? {isHost} {GetLocalIPv4()}{GenerateCode()}{DecodeCode(GenerateCode())}");
+        if (isHost == 1)
+        {
+
             codeInput.gameObject.SetActive(false);
             codeText.gameObject.SetActive(true);
-            charDropdown.gameObject.SetActive(true);
+            foreach (var b in characterButtons)
+                b.gameObject.SetActive(true);
 
-            string code = GenerateCode();
-            codeText.text = code;
+            codeText.text = GenerateCode();
 
             launchButton.onClick.AddListener(() =>
             {
-                byte idx = (byte)charDropdown.value;
-                spawnMgr.SetChoiceForLocal(idx);
-                var transport = NetworkManager.Singleton.GetComponent<UnityTransport>();
-                transport.SetConnectionData("0.0.0.0", 7777);
-                NetworkManager.Singleton.StartHost();
+                Debug.Log($"[SelectUI] Launching host with selection = {selection}");
+                SceneManager.LoadScene(5);
+                
             });
         }
         else
         {
+
             codeInput.gameObject.SetActive(true);
             codeText.gameObject.SetActive(false);
-            charDropdown.gameObject.SetActive(false);
+            foreach (var b in characterButtons)
+                b.gameObject.SetActive(true);
 
             launchButton.onClick.AddListener(() =>
             {
-                string code = codeInput.text;
-                string ip = DecodeCode(code);
-                var transport = NetworkManager.Singleton.GetComponent<UnityTransport>();
-                transport.SetConnectionData(ip, 7777);
-                NetworkManager.Singleton.StartClient();
+                dcodedCode = DecodeCode(codeInput.text);
+                SceneManager.LoadScene(5);
             });
         }
     }
 
     string GenerateCode()
     {
-        string localIP = GetLocalIPAddress();
+        string localIP = GetLocalIPv4();
         var bytes = localIP.Split('.').Select(byte.Parse).ToArray();
-        uint val = ((uint)bytes[0] << 24) | ((uint)bytes[1] << 16) | ((uint)bytes[2] << 8) | bytes[3];
+        uint val = ((uint)bytes[0] << 24) | ((uint)bytes[1] << 16)
+                   | ((uint)bytes[2] << 8) | bytes[3];
         return EncodeBase36(val, 8);
     }
 
@@ -96,12 +107,11 @@ public class CharacterSelectUI : MonoBehaviour
         return val;
     }
 
-    string GetLocalIPAddress()
-    {
-        var host = Dns.GetHostEntry(Dns.GetHostName());
-        foreach (var ip in host.AddressList)
-            if (ip.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
-                return ip.ToString();
-        return "127.0.0.1";
-    }
+    public string GetLocalIPv4()
+{
+return Dns.GetHostEntry(Dns.GetHostName())
+.AddressList.First(
+f => f.AddressFamily == System.Net.Sockets.AddressFamily.InterNetwork)
+.ToString();
+}
 }
