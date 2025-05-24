@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Runtime.InteropServices;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,12 +15,14 @@ public class PausePanel : MonoBehaviour
 
     void OnGUI()
     {
-        if(PausePan.activeInHierarchy && Input.GetKeyDown(KeyCode.Escape)){
+        if (PausePan.activeInHierarchy && Input.GetKeyDown(KeyCode.Escape))
+        {
             PausePan.SetActive(false);
         }
     }
 
-    public void Back(){
+    public void Back()
+    {
         PausePan.SetActive(false);
     }
 
@@ -32,7 +35,12 @@ public class PausePanel : MonoBehaviour
     public void quit()
     {
         Application.Quit();
-    } 
+    }
+
+    public void menu()
+    {
+        SceneManager.LoadSceneAsync(0);
+    }
 
 
 }

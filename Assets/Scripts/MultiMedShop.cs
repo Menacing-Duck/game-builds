@@ -19,7 +19,7 @@ public class Multimedshop : MonoBehaviour
 
         public void Awake()
     {
-        Shop = GameObject.FindGameObjectWithTag("Shope2");
+        Shop = GameObject.FindGameObjectWithTag("Shope");
 
         xp = GameObject.FindGameObjectWithTag("xpc2");
 
