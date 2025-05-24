@@ -23,13 +23,13 @@ public class MultiShopNPC : MonoBehaviour
     public void Awake()
     {
         Shop = GameObject.FindGameObjectWithTag("Shope");
-        if (Shop == null) Debug.LogWarning("Shop non trouvé avec le tag 'Shop'");
+        if (Shop == null) Debug.LogWarning("Shop non trouvé");
 
         MedShop = GameObject.FindGameObjectWithTag("MedShop");
-        if (MedShop == null) Debug.LogWarning("MedShop non trouvé avec le tag 'MedShop'");
+        if (MedShop == null) Debug.LogWarning("MedShop non trouvé");
 
         ModShop = GameObject.FindGameObjectWithTag("ModShop");
-        if (ModShop == null) Debug.LogWarning("ModShop non trouvé avec le tag 'ModShop'");
+        if (ModShop == null) Debug.LogWarning("ModShop non trouvé");
     }
 
     void Start()
@@ -70,7 +70,7 @@ public class MultiShopNPC : MonoBehaviour
         if (other.CompareTag("Shop"))
         {
             PlayerIsClose = true;
-                    Debug.Log("shop détécté");
+            Debug.Log("shop détécté");
 
         }
     }
@@ -81,7 +81,7 @@ public class MultiShopNPC : MonoBehaviour
         if (other.CompareTag("Shop"))
         {
             PlayerIsClose = false;
-                    Debug.Log("quitte la range du shop");
+            Debug.Log("quitte la range du shop");
         }
                 Debug.Log("plus de collision");
     }
