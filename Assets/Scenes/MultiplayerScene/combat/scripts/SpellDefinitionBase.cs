@@ -11,7 +11,7 @@ public abstract class SpellDefinitionBase : ScriptableObject
     public bool affectEnemies = true;
     public float lifetime = 5;
 
-    public int magazineSize = 0;   // number of shots before reload; 0 = infinite
-    public int totalAmmo = 0;      // total bullets available; 0 = unlimited
-    public float reloadTime = 0;   // seconds to reload when magazine empty
+    public int magazineSize = 0;
+    public int totalAmmo = 0;
+    public float reloadTime = 0;
 }

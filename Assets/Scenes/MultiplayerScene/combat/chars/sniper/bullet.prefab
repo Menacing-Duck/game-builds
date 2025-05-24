@@ -220,8 +220,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   def: {fileID: 0}
-  overrideSpeed: -1
-  overrideDamage: -2147483648
+  overrideSpeed: 0
+  overrideDamage: 0
   casterId: 0
   casterTeam: 0
 --- !u!114 &-7810973962800877346

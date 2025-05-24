@@ -9,9 +9,9 @@ public class SpellCaster : NetworkBehaviour
 
     float[] lastCast;
     float[] chargeStart;
-    int[] currentAmmo;
-    int[] ammoPool;
-    bool[] reloading;
+    public int[] currentAmmo;
+    public int[] ammoPool;
+    public bool[] reloading;
     Stats stats;
     static readonly string[] defaults = { "F", "Mouse0", "Q", "E", "V" };
 

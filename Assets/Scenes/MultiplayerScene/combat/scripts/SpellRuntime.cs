@@ -1,4 +1,4 @@
-// SpellRuntime.cs
+
 using UnityEngine;
 using Unity.Netcode;
 
@@ -110,9 +110,9 @@ public class SpellRuntime : NetworkBehaviour
                 remainingPierces--;
                 return;
             }
+        Despawn();
         }
 
-        Despawn();
     }
 
     void Despawn() => NetworkObject.Despawn();

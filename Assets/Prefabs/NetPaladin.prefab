@@ -285,8 +285,11 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 89a36a83974b5868e8c28a7ee307552f, type: 2}
   - {fileID: 11400000, guid: f02718f5ac1ef45b388c43de5e80589c, type: 2}
   - {fileID: 11400000, guid: 6812aed128ef7b5f89c19233cca707f8, type: 2}
+  - {fileID: 11400000, guid: 09db6c5c5e3443ad288a7874cf73ab35, type: 2}
   - {fileID: 0}
-  - {fileID: 0}
+  currentAmmo: 
+  ammoPool: 
+  reloading: 
 --- !u!114 &2279776213930746377
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,12 +304,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   maxHealth: 100
-  maxMana: 100
+  CurLvl:
+    m_InternalValue: 100
+  MaxMana:
+    m_InternalValue: 100
   healthRegen: 2
   manaRegen: 4
+  Money: 10
   health:
     m_InternalValue: 100
-  mana:
+  Mana:
     m_InternalValue: 100
   team: 1
 --- !u!114 &2516704649530280022
