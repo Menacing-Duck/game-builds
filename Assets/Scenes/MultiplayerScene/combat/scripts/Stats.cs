@@ -7,14 +7,14 @@ public class Stats : NetworkBehaviour
 {
     public int maxHealth = 100;
     public NetworkVariable<int> CurLvl = new(100, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
-    public NetworkVariable<int> MaxMana = new(100, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);  
+    public NetworkVariable<int> MaxMana = new(250, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);  
     public float healthRegen = 2;
     public float manaRegen   = 4;
 
     public int Money = 10;
 
     public NetworkVariable<int> health = new(100, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
-    public NetworkVariable<int> Mana   = new(100, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+    public NetworkVariable<int> Mana   = new(250, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
     public Team team = Team.Neutral;
 
     private DeathManager deathManager;
