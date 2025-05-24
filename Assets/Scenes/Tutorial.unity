@@ -12137,7 +12137,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 477681932708779805, guid: dc7d40fe4cab5484a86edae18bba0005, type: 3}
   m_PrefabInstance: {fileID: 7403048525819370882}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1324509249}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 621b74cf6c80ab94dabeea654812048d, type: 3}
@@ -14627,6 +14627,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1282345617}
   m_CullTransparentMesh: 1
+--- !u!1 &1324509249 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2191505794426367534, guid: dc7d40fe4cab5484a86edae18bba0005, type: 3}
+  m_PrefabInstance: {fileID: 7403048525819370882}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1324509258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1324509249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a01c08bbfdfc6e34292cf8bc78930a32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PausePanel: {fileID: 1928774780}
+  SetPanel: {fileID: 1105622554}
 --- !u!1 &1326443745
 GameObject:
   m_ObjectHideFlags: 0
@@ -39681,7 +39700,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2191505794426367534, guid: dc7d40fe4cab5484a86edae18bba0005, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1324509258}
   m_SourcePrefab: {fileID: 100100000, guid: dc7d40fe4cab5484a86edae18bba0005, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

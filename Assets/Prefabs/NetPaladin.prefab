@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: -1647115105440257617}
   - component: {fileID: 2279776213930746377}
   - component: {fileID: 2516704649530280022}
+  - component: {fileID: -7802527843723520744}
   m_Layer: 0
   m_Name: NetPaladin
   m_TagString: Player
@@ -333,6 +334,52 @@ MonoBehaviour:
   DebugInfo: {fileID: 5988307704783595676}
   caster: {fileID: 4525365046940300602, guid: 9270422ad512984a5a8dc69e768cb68b, type: 3}
   stats: {fileID: 5079435451913442061, guid: 9270422ad512984a5a8dc69e768cb68b, type: 3}
+--- !u!61 &-7802527843723520744
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4809101648833989080}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.5833333, y: 0.6666667}
+    newSize: {x: 0.5833333, y: 0.6666667}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 10, y: 10}
+  m_EdgeRadius: 0
 --- !u!1 &7817453557178015786
 GameObject:
   m_ObjectHideFlags: 0

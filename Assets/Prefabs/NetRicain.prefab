@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 8742246147604481909}
   - component: {fileID: -4025643829594131281}
   - component: {fileID: 473165037216772081}
+  - component: {fileID: 6184095350994683116}
   m_Layer: 0
   m_Name: NetRicain
   m_TagString: Player
@@ -287,6 +288,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 60a795174bdedb631bb928789580ccc5, type: 2}
   - {fileID: 11400000, guid: 53c6dec9a73389b5481772e48c600632, type: 2}
   - {fileID: 11400000, guid: c22473f3c21b0bab8a25f04c708dfedd, type: 2}
+  currentAmmo: 
+  ammoPool: 
+  reloading: 
 --- !u!114 &-4025643829594131281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -301,12 +305,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   maxHealth: 100
-  maxMana: 100
+  CurLvl:
+    m_InternalValue: 100
+  MaxMana:
+    m_InternalValue: 100
   healthRegen: 2
   manaRegen: 4
+  Money: 10
   health:
     m_InternalValue: 100
-  mana:
+  Mana:
     m_InternalValue: 100
   team: 1
 --- !u!114 &473165037216772081
@@ -326,6 +334,52 @@ MonoBehaviour:
   DebugInfo: {fileID: 1260608239182853644}
   caster: {fileID: 4525365046940300602, guid: 9270422ad512984a5a8dc69e768cb68b, type: 3}
   stats: {fileID: 5079435451913442061, guid: 9270422ad512984a5a8dc69e768cb68b, type: 3}
+--- !u!61 &6184095350994683116
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665878004986310598}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.45833334, y: 0.6666667}
+    newSize: {x: 0.45833334, y: 0.6666667}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 10, y: 10}
+  m_EdgeRadius: 0
 --- !u!1 &4764047478512418906
 GameObject:
   m_ObjectHideFlags: 0
