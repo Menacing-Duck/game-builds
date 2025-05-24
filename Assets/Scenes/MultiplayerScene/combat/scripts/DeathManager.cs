@@ -7,11 +7,12 @@ public class DeathManager : NetworkBehaviour
 {
     public float respawnDelay = 3f;
     public float invincibilityDuration = 2f;
-    public Transform respawnPoint;
     public Image deathOverlay;
     public float fadeSpeed = 1f;
     private Stats stats;
     private bool isDead = false;
+    public Transform respawnPoint;
+
 
     void Start()
     {

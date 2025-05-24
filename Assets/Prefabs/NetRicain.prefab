@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: -4025643829594131281}
   - component: {fileID: 473165037216772081}
   - component: {fileID: 6184095350994683116}
+  - component: {fileID: 3253598833954433032}
   m_Layer: 0
   m_Name: NetRicain
   m_TagString: Player
@@ -380,6 +381,24 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 10, y: 10}
   m_EdgeRadius: 0
+--- !u!114 &3253598833954433032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665878004986310598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65fd1aea9391b2f438e1ee53b4707b90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowTopMostFoldoutHeaderGroup: 1
+  respawnDelay: 5
+  invincibilityDuration: 2
+  deathOverlay: {fileID: 0}
+  fadeSpeed: 1
+  respawnPoint: {fileID: 0}
 --- !u!1 &4764047478512418906
 GameObject:
   m_ObjectHideFlags: 0

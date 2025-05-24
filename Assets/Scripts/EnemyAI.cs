@@ -86,6 +86,8 @@ public class EnemyAI : NetworkBehaviour
 
     void MoveToDefaultDestination()
     {
+        if (defaultDestination == null) return;
+
         isMovingToDefaultDestination = true;
         Vector2 direction = (defaultDestination.position - transform.position).normalized;
 

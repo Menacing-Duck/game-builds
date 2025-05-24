@@ -15,8 +15,16 @@ public class GamePhaseManager : NetworkBehaviour
     public SpawnPoint[] spawnPoints;
     public float globalSpawnInterval = 5f;
 
+    private Transform defaultDestination;
+
     private void Start()
     {
+        GameObject destinationObj = GameObject.FindGameObjectWithTag("flag");
+        if (destinationObj != null)
+        {
+            defaultDestination = destinationObj.transform;
+        }
+
         if (IsServer)
         {
             StartCoroutine(SpawnEnemiesRoutine());
@@ -45,6 +53,15 @@ public class GamePhaseManager : NetworkBehaviour
             randomSpawnPoint.location.position, 
             randomSpawnPoint.location.rotation);
         
+        if (defaultDestination != null)
+        {
+            EnemyAI enemyAI = enemy.GetComponent<EnemyAI>();
+            if (enemyAI != null)
+            {
+                enemyAI.defaultDestination = defaultDestination;
+            }
+        }
+
         NetworkObject networkObject = enemy.GetComponent<NetworkObject>();
         if (networkObject != null)
         {
