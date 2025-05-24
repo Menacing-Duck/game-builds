@@ -166,7 +166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  moveSpeed: 30
+  moveSpeed: 5
   detectionRadius: 5
   stopDistance: 0
   obstacleCheckDistance: 0.5
