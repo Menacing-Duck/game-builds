@@ -18,6 +18,7 @@ TagManager:
   - upglvl2
   - bourse2
   - manabourse2
+  - flag
   layers:
   - Default
   - TransparentFX
