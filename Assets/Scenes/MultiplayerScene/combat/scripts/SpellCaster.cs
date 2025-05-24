@@ -97,7 +97,7 @@ public class SpellCaster : NetworkBehaviour
         int cost = spell.magazineSize > 0
             ? 0
             : Mathf.Max(0, Mathf.RoundToInt(spell.manaCost * stats.GetManaCostMultiplier()));
-        if (stats.mana.Value < cost) return;
+        if (stats.Mana.Value < cost) return;
         Vector2 aim = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         CastServerRpc(slot, aim, cost, 1f);
         lastCast[slot] = Time.time;
@@ -122,7 +122,7 @@ public class SpellCaster : NetworkBehaviour
         int cost = spell.magazineSize > 0
             ? 0
             : Mathf.Max(0, Mathf.RoundToInt(spell.manaCost * stats.GetManaCostMultiplier()));
-        if (stats.mana.Value < cost) return;
+        if (stats.Mana.Value < cost) return;
         Vector2 aim = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         CastServerRpc(slot, aim, cost, chargeRatio);
         lastCast[slot] = Time.time;
@@ -153,8 +153,8 @@ public class SpellCaster : NetworkBehaviour
         var spell = spellbook[slot];
         if (spell.magazineSize == 0)
         {
-            if (stats.mana.Value < cost) return;
-            stats.mana.Value -= cost;
+            if (stats.Mana.Value < cost) return;
+            stats.Mana.Value -= cost;
         }
 
 

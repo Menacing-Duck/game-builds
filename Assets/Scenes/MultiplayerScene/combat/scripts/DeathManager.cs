@@ -96,7 +96,7 @@ public class DeathManager : NetworkBehaviour
 
         // Réinitialiser les stats
         stats.health.Value = stats.maxHealth;
-        stats.mana.Value = stats.maxMana;
+        stats.Mana.Value = stats.MaxMana.Value;
         isDead = false;
 
         // Réactiver les composants

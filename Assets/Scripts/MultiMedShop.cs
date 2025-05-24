@@ -62,20 +62,20 @@ public class Multimedshop : MonoBehaviour
     }
 
     public void UpdMana(){
-        manabourse.text = $"Current Mana = {Player.mana} mana";
+        manabourse.text = $"Current Mana = {Player.Mana} mana";
     }
 
     public void Buy10()
     {
-        if (Player.Money >= 5 && Player.mana != Player.maxMana)
+        if (Player.Money >= 5 && Player.Mana != Player.MaxMana)
         {
-            if (Player.mana + 10 >= Player.maxMana)
+            if (Player.Mana.Value + 10 >= Player.MaxMana.Value)
             {
-                Player.Mana = Player.MaxMana;
+                Player.Mana.Value = Player.MaxMana.Value;
             }
             else
             {
-                Player.Mana += 10;
+                Player.Mana.Value += 10;
             }
             Player.Money -= 5;
             UpdMana();
@@ -85,11 +85,11 @@ public class Multimedshop : MonoBehaviour
 
     public void Buy25(){
         if(Player.Money >= 10 && Player.Mana != Player.MaxMana){
-            if(Player.Mana + 25 >= Player.MaxMana){
+            if(Player.Mana.Value + 25 >= Player.MaxMana.Value){
                 Player.Mana = Player.MaxMana;
             }
             else{
-                Player.Mana += 25;
+                Player.Mana.Value += 25;
             }
             Player.Money -= 10;
             UpdMon();
@@ -99,11 +99,11 @@ public class Multimedshop : MonoBehaviour
 
     public void Buy100(){
         if(Player.Money >= 35 && Player.Mana != Player.MaxMana){
-            if(Player.Mana + 100 >= Player.MaxMana){
+            if(Player.Mana.Value + 100 >= Player.MaxMana.Value){
                 Player.Mana = Player.MaxMana;
             }
             else{
-                Player.Mana += 100;
+                Player.Mana.Value += 100;
             }
             Player.Money -= 35;
             UpdMon();
@@ -113,11 +113,11 @@ public class Multimedshop : MonoBehaviour
 
     public void buy250(){
         if(Player.Money >= 80 && Player.Mana != Player.MaxMana){
-            if(Player.Mana + 250 >= Player.MaxMana){
+            if(Player.Mana.Value + 250 >= Player.MaxMana.Value){
                 Player.Mana = Player.MaxMana;
             }
             else{
-                Player.Mana += 250;
+                Player.Mana.Value += 250;
             }
             Player.Money -= 80;
             UpdMon();
@@ -127,34 +127,34 @@ public class Multimedshop : MonoBehaviour
 
     public void upgstor(){
         
-        if(Player.CurLvl == 3){
+        if(Player.CurLvl.Value == 3){
             if(Player.Money >= 35){
-                Player.MaxMana = 250;
+                Player.MaxMana.Value = 250;
                 Player.Money -= 35;
-                Player.CurLvl = 3;
+                Player.CurLvl.Value = 3;
                 xpc.text = "Max level reached!";
                 upglvl.text = "4";
                 UpdMon();
             }
         }
-        if(Player.CurLvl == 2){
+        if(Player.CurLvl.Value == 2){
             if(Player.Money >= 15){
-                Player.MaxMana = 100;
+                Player.MaxMana.Value = 100;
                 Player.Money -= 15;
-                Player.CurLvl = 3;
+                Player.CurLvl.Value = 3;
                 xpc.text = "35 Coins";
                 upglvl.text = "3";
                 UpdMon();
             }
         }
 
-        if (Player.CurLvl == 1)
+        if (Player.CurLvl.Value == 1)
         {
             if (Player.Money >= 5)
             {
-                Player.MaxMana = 50;
+                Player.MaxMana.Value = 50;
                 Player.Money -= 5;
-                Player.CurLvl = 2;
+                Player.CurLvl.Value = 2;
                 xpc.text = "15 Coins";
                 upglvl.text = "2";
                 UpdMon();

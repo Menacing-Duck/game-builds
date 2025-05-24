@@ -33,7 +33,7 @@ public class NetPlayer : NetworkBehaviour
     sb.AppendLine($"UID {Uid}  Client {OwnerClientId}");
     sb.AppendLine($"Team {stats.team}");
     sb.AppendLine($"HP {stats.health.Value}/{stats.maxHealth}  (+{stats.healthRegen}/s)");
-    sb.AppendLine($"MP {stats.mana.Value}/{stats.maxMana}  (+{stats.manaRegen}/s)");
+    sb.AppendLine($"MP {stats.Mana.Value}/{stats.MaxMana}  (+{stats.manaRegen}/s)");
 
     Vector2 pos = transform.position;
     sb.AppendLine($"Pos {pos.x:0.00},{pos.y:0.00}");
