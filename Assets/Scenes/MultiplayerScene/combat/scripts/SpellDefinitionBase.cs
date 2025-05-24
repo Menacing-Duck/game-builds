@@ -1,4 +1,3 @@
-// SpellDefinitionBase.cs
 using UnityEngine;
 
 public abstract class SpellDefinitionBase : ScriptableObject

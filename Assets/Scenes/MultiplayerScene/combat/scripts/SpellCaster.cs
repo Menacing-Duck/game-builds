@@ -165,7 +165,6 @@ public class SpellCaster : NetworkBehaviour
         if (p.isChargeable)
             speed *= Mathf.Lerp(p.minSpeedPercent, p.maxSpeedPercent, charge);
 
-        // compute charged damage
         int baseDmg = p.effect.damage;
         int dmg = p.isChargeable
             ? Mathf.RoundToInt(baseDmg * Mathf.Lerp(p.minDamagePercent, p.maxDamagePercent, charge))
@@ -179,7 +178,7 @@ public class SpellCaster : NetworkBehaviour
         var runtime = proj.GetComponent<SpellRuntime>();
         runtime.def           = spell;
         runtime.overrideSpeed = speed;
-        runtime.overrideDamage= dmg;          // new field you’ll add
+        runtime.overrideDamage= dmg;
         runtime.casterId      = OwnerClientId;
         runtime.casterTeam    = stats.team;
 

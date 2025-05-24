@@ -1,4 +1,4 @@
-// ProjectileSpellDefinition.cs
+
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "ProjectileSpell_", menuName = "Spells/Projectile")]
