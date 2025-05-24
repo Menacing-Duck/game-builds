@@ -30,3 +30,4 @@ MonoBehaviour:
   spawnMode: 1
   offsetFromCaster: 1
   stickToCaster: 1
+  automaticFire: 1
