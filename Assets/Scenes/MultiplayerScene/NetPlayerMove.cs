@@ -106,13 +106,11 @@ public class PlayerMovement : NetworkBehaviour
         {
             animator.SetFloat("X", input.x);
             animator.SetFloat("Y", input.y);
-            animator.SetFloat("Speed", input.magnitude);
         }
         else
         {
             animator.SetFloat("X", lastDirection.x); //Ici on reprend la dernière direction quand il a arrêté de bouger
             animator.SetFloat("Y", lastDirection.y);
-            animator.SetFloat("Speed", 0); // idle dans la bonne direction
         }
 
         animator.SetBool("IsWalking", isWalking);
@@ -135,7 +133,6 @@ public class PlayerMovement : NetworkBehaviour
 
         animator.SetFloat("X", direction.x);
         animator.SetFloat("Y", direction.y);
-        animator.SetFloat("Speed", speed);
         animator.SetBool("IsWalking", walking);
     }   
 
