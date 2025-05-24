@@ -23,12 +23,6 @@ public class NPC : MonoBehaviour
 
         if (Input.GetKeyDown(interactKey) && PlayerIsClose)
         {
-
-            if (DialoguePanel.activeInHierarchy)
-            {
-                ZeroText();
-            }
-            else
             {
                 DialoguePanel.SetActive(true);
                 ContButton.SetActive(false);
