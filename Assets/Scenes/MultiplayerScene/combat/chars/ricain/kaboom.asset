@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1278a9d2e7b3fcbc49e694178385afeb, type: 3}
-  m_Name: demacia
+  m_Script: {fileID: 11500000, guid: 74dd690c5b18e5043ac09d19ad45f6d1, type: 3}
+  m_Name: kaboom
   m_EditorClassIdentifier: 
-  spellName: DEMACIA
-  cooldown: 1
-  manaCost: 100
+  spellName: airstrike
+  cooldown: 0.5
+  manaCost: 50
   effect:
     damage: 50
     speedMod: 0
@@ -25,6 +25,8 @@ MonoBehaviour:
     manaCostReduction: 0
   affectAllies: 0
   affectEnemies: 1
-  lifetime: 0.2
-  attachPrefab: {fileID: 0}
-  offsetFromCenter: 0
+  lifetime: 1
+  aoePrefab: {fileID: 6045238060774744094, guid: e67912dedfddf4641885d1bd7269ea5b, type: 3}
+  spawnMode: 0
+  offsetFromCaster: 1
+  stickToCaster: 0

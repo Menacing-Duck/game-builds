@@ -20,6 +20,15 @@ public class MultiShopNPC : MonoBehaviour
 
     public bool PlayerIsClose;
 
+    public void Awake()
+    {
+        Shop = GameObject.FindGameObjectWithTag("Shope");
+
+        MedShop = GameObject.FindGameObjectWithTag("MedShop");
+
+        ModShop = GameObject.FindGameObjectWithTag("ModShop");
+    }
+
     void Start()
     {    
         if (Player.IsMed)
@@ -35,7 +44,7 @@ public class MultiShopNPC : MonoBehaviour
 
     void Update()
     {
-        KeyCode interactKey = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("interact", "F"));
+        KeyCode interactKey = KeyCode.Space;
 
         if (Input.GetKeyDown(interactKey) && PlayerIsClose)
         {

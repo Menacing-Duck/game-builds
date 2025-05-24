@@ -9,14 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a21cc760421697fba8a9108c96c7e18d, type: 3}
-  m_Name: bullet
+  m_Script: {fileID: 11500000, guid: 74dd690c5b18e5043ac09d19ad45f6d1, type: 3}
+  m_Name: CQB
   m_EditorClassIdentifier: 
-  spellName: New Spell
-  cooldown: 0.1
+  spellName: slahs
+  cooldown: 0.6
   manaCost: 0
   effect:
-    damage: 5
+    damage: 10
     speedMod: 0
     duration: 0
     tickInterval: 0
@@ -25,10 +25,9 @@ MonoBehaviour:
     manaCostReduction: 0
   affectAllies: 0
   affectEnemies: 1
-  lifetime: 5
-  projectilePrefab: {fileID: 3484113950029345638, guid: ad6cf2f46bd682bd783efc874bf6e706, type: 3}
-  projectileSpeed: 50
-  isHoming: 0
-  homingStrength: 0
-  homingDelay: 0
+  lifetime: 0.5
+  aoePrefab: {fileID: 1287872103840653728, guid: 104864fec0366b0ca8df9fa42009246d, type: 3}
+  spawnMode: 1
+  offsetFromCaster: 1
+  stickToCaster: 1
   automaticFire: 1

@@ -195,6 +195,8 @@ GameObject:
   - component: {fileID: -6977958785067568405}
   - component: {fileID: 5809926715614244501}
   - component: {fileID: -2260508676338436504}
+  - component: {fileID: 1101024804461426545}
+  - component: {fileID: 4069115637824139703}
   m_Layer: 0
   m_Name: NetHealer
   m_TagString: Player
@@ -502,3 +504,38 @@ MonoBehaviour:
   DebugInfo: {fileID: 8392070096479093897}
   caster: {fileID: 4525365046940300602, guid: 9270422ad512984a5a8dc69e768cb68b, type: 3}
   stats: {fileID: 5079435451913442061, guid: 9270422ad512984a5a8dc69e768cb68b, type: 3}
+--- !u!114 &1101024804461426545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6953798068386224475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90766bf6ab26bae4fa8d5d68d9d66ac0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Shop: {fileID: 0}
+  MedShop: {fileID: 0}
+  ModShop: {fileID: 0}
+  Player: {fileID: 0}
+  PlayerIsClose: 0
+--- !u!114 &4069115637824139703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6953798068386224475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 621b74cf6c80ab94dabeea654812048d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Money: 10
+  CurLvl: 0
+  Hp: 0
+  Mana: 0
+  MaxMana: 0
+  IsMed: 0

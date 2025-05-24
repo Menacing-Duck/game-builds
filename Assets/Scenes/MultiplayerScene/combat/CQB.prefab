@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4088129025292831521}
   - component: {fileID: 6887496301856912029}
   m_Layer: 0
-  m_Name: slash
+  m_Name: CQB
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

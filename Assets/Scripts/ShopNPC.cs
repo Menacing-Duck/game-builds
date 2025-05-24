@@ -34,7 +34,7 @@ public class ShopNPC : MonoBehaviour
 
     void Update()
     {
-        KeyCode interactKey = (KeyCode)System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("interact", "F"));
+        KeyCode interactKey = KeyCode.Space;
 
         if (Input.GetKeyDown(interactKey) && PlayerIsClose)
         {

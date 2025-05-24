@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 7782840976289109005}
   - component: {fileID: 928024175111478043}
   - component: {fileID: -6409444778329986170}
+  - component: {fileID: 2058347997157809087}
+  - component: {fileID: 4166485502185090727}
   m_Layer: 0
   m_Name: Player5
   m_TagString: Player
@@ -266,3 +268,42 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.5833333, y: 0.6666667}
   m_EdgeRadius: 0
+--- !u!114 &2058347997157809087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4809101648833989080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90766bf6ab26bae4fa8d5d68d9d66ac0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Shop: {fileID: 0}
+  MedShop: {fileID: 0}
+  ModShop: {fileID: 0}
+  Player: {fileID: 928024175111478043}
+  PlayerIsClose: 0
+--- !u!114 &4166485502185090727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4809101648833989080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cff5d23d55bb9449a53b336af555344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 928024175111478043}
+  Shop: {fileID: 0}
+  xp: {fileID: 0}
+  uplvl: {fileID: 0}
+  brse: {fileID: 0}
+  mnabourse: {fileID: 0}
+  xpc: {fileID: 0}
+  upglvl: {fileID: 0}
+  bourse: {fileID: 0}
+  manabourse: {fileID: 0}

@@ -5,6 +5,15 @@ TagManager:
   serializedVersion: 3
   tags:
   - Shop
+  - Pause
+  - Settings
+  - Shope
+  - MedShop
+  - ModShop
+  - xpc
+  - upglvl
+  - bourse
+  - manabourse
   layers:
   - Default
   - TransparentFX

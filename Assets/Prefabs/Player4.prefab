@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 3153172428485773104}
   - component: {fileID: -3491549453541800681}
   - component: {fileID: -6764654257765527103}
+  - component: {fileID: -5377884504151607404}
+  - component: {fileID: -7634171893680616531}
   m_Layer: 0
   m_Name: Player4
   m_TagString: Player
@@ -266,3 +268,42 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.45833334, y: 0.6666667}
   m_EdgeRadius: 0
+--- !u!114 &-5377884504151607404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665878004986310598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90766bf6ab26bae4fa8d5d68d9d66ac0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Shop: {fileID: 0}
+  MedShop: {fileID: 0}
+  ModShop: {fileID: 0}
+  Player: {fileID: -3491549453541800681}
+  PlayerIsClose: 0
+--- !u!114 &-7634171893680616531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665878004986310598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3464c23f51f583d41a036b2cf3ed9d4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: -3491549453541800681}
+  Shop: {fileID: 0}
+  xp: {fileID: 0}
+  uplvl: {fileID: 0}
+  brse: {fileID: 0}
+  mnabourse: {fileID: 0}
+  xpc: {fileID: 0}
+  upglvl: {fileID: 0}
+  bourse: {fileID: 0}
+  manabourse: {fileID: 0}
