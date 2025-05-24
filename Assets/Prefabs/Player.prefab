@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 6253296656544670371}
   - component: {fileID: 3329579263523768918}
   - component: {fileID: 1362804555415970241}
-  - component: {fileID: 5313273510947646592}
   - component: {fileID: 2993970552022241475}
   - component: {fileID: 1767020888624375134}
   - component: {fileID: 2220327296986739920}
   - component: {fileID: 1089386211732827005}
   - component: {fileID: -8101258773500664021}
+  - component: {fileID: 6505803154601530740}
+  - component: {fileID: -4141556486289672674}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -168,20 +169,6 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &5313273510947646592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2082017420900057382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a01c08bbfdfc6e34292cf8bc78930a32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PausePanel: {fileID: 0}
-  SetPanel: {fileID: 0}
 --- !u!114 &2993970552022241475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,7 +220,7 @@ MonoBehaviour:
   Shop: {fileID: 0}
   MedShop: {fileID: 0}
   ModShop: {fileID: 0}
-  Player: {fileID: 0}
+  Player: {fileID: 1089386211732827005}
   PlayerIsClose: 0
 --- !u!114 &1089386211732827005
 MonoBehaviour:
@@ -299,3 +286,37 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.625, y: 0.6458333}
   m_EdgeRadius: 0
+--- !u!114 &6505803154601530740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082017420900057382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15b1fc8a7a42c1a4bad3bdf3f5b6c07c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-4141556486289672674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2082017420900057382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cff5d23d55bb9449a53b336af555344, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Player: {fileID: 1089386211732827005}
+  Shop: {fileID: 0}
+  xp: {fileID: 0}
+  uplvl: {fileID: 0}
+  brse: {fileID: 0}
+  mnabourse: {fileID: 0}
+  xpc: {fileID: 0}
+  upglvl: {fileID: 0}
+  bourse: {fileID: 0}
+  manabourse: {fileID: 0}

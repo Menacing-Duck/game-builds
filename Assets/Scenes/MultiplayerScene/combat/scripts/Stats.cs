@@ -6,9 +6,12 @@ using System.Collections.Generic;
 public class Stats : NetworkBehaviour
 {
     public int maxHealth = 100;
-    public int maxMana   = 100;
+    public NetworkVariable<int> maxMana = new(100, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
     public float healthRegen = 2;
     public float manaRegen   = 4;
+
+    public int Money = 10;
+
     public NetworkVariable<int> health = new(100, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
     public NetworkVariable<int> mana   = new(100, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
     public Team team = Team.Neutral;
