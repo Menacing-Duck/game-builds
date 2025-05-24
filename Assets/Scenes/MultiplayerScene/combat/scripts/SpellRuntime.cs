@@ -1,3 +1,4 @@
+// SpellRuntime.cs
 using UnityEngine;
 using Unity.Netcode;
 
@@ -5,25 +6,38 @@ using Unity.Netcode;
 public class SpellRuntime : NetworkBehaviour
 {
     public SpellDefinitionBase def;
+    public float overrideSpeed = -1f;
+    public int   overrideDamage = int.MinValue;
     public ulong casterId;
-    public Team casterTeam;
+    public Team  casterTeam;
 
     Rigidbody2D rb;
     float spawnTime;
+    int remainingPierces;
 
     public override void OnNetworkSpawn()
     {
         spawnTime = Time.time;
         rb = GetComponent<Rigidbody2D>();
-        if (IsServer && def.lifetime > 0) Invoke(nameof(Despawn), def.lifetime);
-        if (def is ProjectileSpellDefinition p && IsServer && rb != null)
-            rb.linearVelocity = (Vector2)transform.up * p.projectileSpeed;
+
+        if (def is ProjectileSpellDefinition p)
+            remainingPierces = p.pierceCount;
+
+        if (IsServer && def.lifetime > 0f)
+            Invoke(nameof(Despawn), def.lifetime);
+
+        if (def is ProjectileSpellDefinition p2 && IsServer && rb != null)
+        {
+            float speed = overrideSpeed > 0f ? overrideSpeed : p2.projectileSpeed;
+            rb.linearVelocity = (Vector2)transform.up * speed;
+        }
     }
 
     public void IgnoreCaster(Collider2D casterCol)
     {
-        var myCol = GetComponent<Collider2D>();
-        if (myCol && casterCol) Physics2D.IgnoreCollision(myCol, casterCol, true);
+        Collider2D myCol = GetComponent<Collider2D>();
+        if (myCol != null && casterCol != null)
+            Physics2D.IgnoreCollision(myCol, casterCol, true);
     }
 
     void Update()
@@ -31,7 +45,8 @@ public class SpellRuntime : NetworkBehaviour
         if (def is ProjectileSpellDefinition && rb != null)
         {
             Vector2 v = rb.linearVelocity;
-            if (v.sqrMagnitude > 0.001f) transform.up = v.normalized;
+            if (v.sqrMagnitude > 0.001f)
+                transform.up = v.normalized;
         }
     }
 
@@ -52,17 +67,16 @@ public class SpellRuntime : NetworkBehaviour
     bool TryFindTarget(out Vector2 dir)
     {
         dir = Vector2.zero;
-        Collider2D[] hits = Physics2D.OverlapCircleAll(transform.position, 8);
         float best = float.MaxValue;
-        foreach (var h in hits)
+        foreach (var col in Physics2D.OverlapCircleAll(transform.position, 8f))
         {
-            if (!h.TryGetComponent(out Stats s)) continue;
+            if (!col.TryGetComponent(out Stats s)) continue;
             if (!ShouldAffect(s)) continue;
-            float d = Vector2.SqrMagnitude(h.transform.position - transform.position);
+            float d = (col.transform.position - transform.position).sqrMagnitude;
             if (d < best)
             {
                 best = d;
-                dir = (Vector2)(h.transform.position - transform.position);
+                dir = (Vector2)(col.transform.position - transform.position);
             }
         }
         return best < float.MaxValue;
@@ -71,7 +85,7 @@ public class SpellRuntime : NetworkBehaviour
     bool ShouldAffect(Stats target)
     {
         if (target.team == Team.Neutral) return false;
-        if (target.IsAlly(casterTeam)) return def.affectAllies;
+        if (target.IsAlly(casterTeam))   return def.affectAllies;
         return def.affectEnemies;
     }
 
@@ -82,10 +96,23 @@ public class SpellRuntime : NetworkBehaviour
         if (!ShouldAffect(stat)) return;
 
         SpellEffect eff = def.effect;
-        if (stat.IsAlly(casterTeam)) eff.damage = -Mathf.Abs(eff.damage);
+        if (overrideDamage != int.MinValue)
+            eff.damage = overrideDamage;
+        if (stat.IsAlly(casterTeam))
+            eff.damage = -Mathf.Abs(eff.damage);
+
         stat.Apply(eff, casterId);
 
-        if (def is ProjectileSpellDefinition) Despawn();
+        if (def is ProjectileSpellDefinition p)
+        {
+            if (remainingPierces > 0)
+            {
+                remainingPierces--;
+                return;
+            }
+        }
+
+        Despawn();
     }
 
     void Despawn() => NetworkObject.Despawn();

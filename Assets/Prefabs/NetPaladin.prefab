@@ -283,7 +283,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   spellbook:
   - {fileID: 11400000, guid: 89a36a83974b5868e8c28a7ee307552f, type: 2}
-  - {fileID: 11400000, guid: 89a36a83974b5868e8c28a7ee307552f, type: 2}
+  - {fileID: 11400000, guid: f02718f5ac1ef45b388c43de5e80589c, type: 2}
   - {fileID: 11400000, guid: 6812aed128ef7b5f89c19233cca707f8, type: 2}
   - {fileID: 0}
   - {fileID: 0}

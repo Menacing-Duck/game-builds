@@ -282,8 +282,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
   spellbook:
-  - {fileID: 11400000, guid: 89a36a83974b5868e8c28a7ee307552f, type: 2}
-  - {fileID: 11400000, guid: 89a36a83974b5868e8c28a7ee307552f, type: 2}
+  - {fileID: 11400000, guid: 3879d1df1d4b69bb48836f97085ea357, type: 2}
+  - {fileID: 11400000, guid: 3879d1df1d4b69bb48836f97085ea357, type: 2}
   - {fileID: 11400000, guid: 724a623a77b6c3632880fee87305c6fe, type: 2}
   - {fileID: 0}
   - {fileID: 0}

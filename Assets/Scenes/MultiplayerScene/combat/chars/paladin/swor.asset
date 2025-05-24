@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74dd690c5b18e5043ac09d19ad45f6d1, type: 3}
+  m_Name: swor
+  m_EditorClassIdentifier: 
+  spellName: slahs
+  cooldown: 1.5
+  manaCost: 0
+  effect:
+    damage: 15
+    speedMod: 0
+    duration: 0
+    tickInterval: 0
+    cooldownReduction: 0
+    manaRegenBonus: 0
+    manaCostReduction: 0
+  affectAllies: 0
+  affectEnemies: 1
+  lifetime: 0.5
+  magazineSize: 0
+  totalAmmo: 0
+  reloadTime: 0
+  aoePrefab: {fileID: 1287872103840653728, guid: 223c0a86f0453910eb9f0ee759225eeb, type: 3}
+  spawnMode: 1
+  offsetFromCaster: 1
+  stickToCaster: 1
+  automaticFire: 1
