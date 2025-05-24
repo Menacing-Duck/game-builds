@@ -11,9 +11,7 @@ public class FlagZone : NetworkBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (!IsServer) return;
-
-        if (!other.CompareTag("Player"))
+        if (other.CompareTag("Enemy"))
         {
             isCapturing = true;
             currentCaptureTime = 0f;
@@ -23,9 +21,7 @@ public class FlagZone : NetworkBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (!IsServer) return;
-
-        if (!other.CompareTag("Player"))
+        if (other.CompareTag("Enemy"))
         {
             isCapturing = false;
             currentCaptureTime = 0f;

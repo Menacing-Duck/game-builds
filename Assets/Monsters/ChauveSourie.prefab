@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 1036129934277447371}
   m_Layer: 0
   m_Name: ChauveSourie
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -166,9 +166,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  moveSpeed: 3
+  moveSpeed: 30
   detectionRadius: 5
-  stopDistance: 1.5
+  stopDistance: 0
   obstacleCheckDistance: 0.5
   defaultDestination: {fileID: 0}
 --- !u!50 &-8105628977126162836
