@@ -2,9 +2,7 @@ using UnityEngine;
 
 public class SpawnEnemy : MonoBehaviour
 {
-
     public GameObject Monster;
-
 
     public void spawn()
     {
