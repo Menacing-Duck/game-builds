@@ -121,7 +121,7 @@ public class PlayerMovement : NetworkBehaviour
         movement = input.normalized;
         rb.linearVelocity = movement * speed;
 
-        Debug.Log($"UP:{up}, DOWN:{down}, LEFT:{left}, RIGHT:{right}, IsWalking:{isWalking}");
+        // Debug.Log($"UP:{up}, DOWN:{down}, LEFT:{left}, RIGHT:{right}, IsWalking:{isWalking}");
 
         // reset
         up = down = left = right = isWalking = false;

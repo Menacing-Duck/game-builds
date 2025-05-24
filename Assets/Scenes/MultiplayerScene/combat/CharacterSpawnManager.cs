@@ -1,59 +1,90 @@
-using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode;
 
-public class CharacterSpawnManager : MonoBehaviour
+public class CharacterSpawnManager : NetworkBehaviour
 {
-    public List<GameObject> playerPrefabs = new();
-    public List<Transform>  spawnPoints  = new();  // assign in inspector
-    Dictionary<ulong, byte> choice = new();
+    [Header("Drag your character prefabs here (must match selectUI selection indices)")]
+    public GameObject[] characterPrefabs;
 
-    void Awake()
+    [Header("Drag your spawn-point Transforms here")]
+    public Transform[] spawnPoints;
+
+    public override void OnNetworkSpawn()
     {
-        var nm = NetworkManager.Singleton;
-        nm.ConnectionApprovalCallback    = Approval;
-        nm.OnClientConnectedCallback    += OnClientConnected;
-    }
-
-    public void SetChoiceForLocal(byte index)
-    {
-        var nm = NetworkManager.Singleton;
-        if (nm.IsHost) choice[nm.LocalClientId] = index;
-        nm.NetworkConfig.ConnectionData = new[] { index };
-    }
-
-    void Approval(NetworkManager.ConnectionApprovalRequest req, NetworkManager.ConnectionApprovalResponse res)
-    {
-        byte idx = req.Payload.Length > 0 ? req.Payload[0] : (byte)0;
-        choice[req.ClientNetworkId] = idx;
-        res.Approved            = true;
-        res.CreatePlayerObject = false;
-    }
-
-    void OnClientConnected(ulong clientId)
-    {
-        if (!NetworkManager.Singleton.IsServer) return;
-
-        byte idx   = choice.TryGetValue(clientId, out var v) ? v : (byte)0;
-        int  slot  = Mathf.Clamp(idx, 0, playerPrefabs.Count - 1);
-
-        // choose spawn‐point:
-        Vector3 spawnPos = Vector3.zero;
-        if (spawnPoints.Count > 0)
+        // Only run on the server side when a new client connects
+        if (IsServer)
         {
-            // simple round‐robin by clientId:
-            int pt = (int)(clientId % (ulong)spawnPoints.Count);
-            spawnPos = spawnPoints[pt].position;
+            NetworkManager.Singleton.OnClientConnectedCallback += HandleClientConnected;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (NetworkManager.Singleton != null && IsServer)
+        {
+            NetworkManager.Singleton.OnClientConnectedCallback -= HandleClientConnected;
+        }
+    }
+
+    private void HandleClientConnected(ulong clientId)
+    {
+        // Ask the client what their selection was
+        SpawnCharacterRequestClientRpc(new ClientSpawnRequest { ClientId = clientId }, new ClientRpcParams
+        {
+            Send = new ClientRpcSendParams { TargetClientIds = new[] { clientId } }
+        });
+    }
+
+    // A tiny struct to carry the RPC data
+    public struct ClientSpawnRequest : INetworkSerializable
+    {
+        public ulong ClientId;
+        public int Selection;
+        public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
+        {
+            serializer.SerializeValue(ref ClientId);
+            serializer.SerializeValue(ref Selection);
+        }
+    }
+
+    /// <summary>
+    /// Sent to the client to retrieve its static selectUi.selection and echo back to the server.
+    /// </summary>
+    [ClientRpc]
+    private void SpawnCharacterRequestClientRpc(ClientSpawnRequest requestData, ClientRpcParams rpcParams = default)
+    {
+        // Populate the selection from the static selectUi class
+        requestData.Selection = selectUi.selection;
+        // Send it back to the server
+        ConfirmSpawnServerRpc(requestData);
+    }
+
+    /// <summary>
+    /// Actually runs on the server to instantiate the right prefab at the right spawn point.
+    /// </summary>
+    [ServerRpc(RequireOwnership = false)]
+    private void ConfirmSpawnServerRpc(ClientSpawnRequest requestData, ServerRpcParams serverParams = default)
+    {
+        int sel = requestData.Selection;
+        ulong clientId = requestData.ClientId;
+
+        // Safety checks
+        if (sel < 0 || sel >= characterPrefabs.Length || spawnPoints.Length == 0)
+        {
+            Debug.LogWarning($"[SpawnManager] Invalid selection or no spawn points!");
+            return;
         }
 
-        SpawnPrefabFor(clientId, slot, spawnPos);
-    }
+        // Simple round-robin assignment of spawn points
+        int spawnIndex = (int)(clientId % (ulong)spawnPoints.Length);
 
-    public void SpawnPrefabFor(ulong clientId, int prefabIndex, Vector3 pos)
-    {
-        int i = Mathf.Clamp(prefabIndex, 0, playerPrefabs.Count - 1);
-        var go = Instantiate(playerPrefabs[i], pos, Quaternion.identity);
-        go.GetComponent<NetworkObject>()
-          .SpawnAsPlayerObject(clientId, true);
+        Vector3 pos = spawnPoints[spawnIndex].position;
+        Quaternion rot = spawnPoints[spawnIndex].rotation;
+
+        GameObject go = Instantiate(characterPrefabs[sel], pos, rot);
+        var netObj = go.GetComponent<NetworkObject>();
+        netObj.SpawnAsPlayerObject(clientId, true);
+        
+        Debug.Log($"[SpawnManager] Spawned client {clientId} with character #{sel} at spawn #{spawnIndex}");
     }
 }

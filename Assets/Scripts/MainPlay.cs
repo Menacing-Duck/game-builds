@@ -18,13 +18,15 @@ public class MainPlay : MonoBehaviour
 
     public void host()
     {
-        IsHost = 1; 
-        SceneManager.LoadSceneAsync(5);
+        Debug.Log("yay");
+        Debug.Log(IsHost);
+        IsHost = 1;
+        SceneManager.LoadSceneAsync(6);
     }
 
     public void join()
     {
         IsHost = 2; 
-        SceneManager.LoadSceneAsync(5);
+        SceneManager.LoadSceneAsync(6);
     }
 }
